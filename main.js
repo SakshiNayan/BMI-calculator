@@ -2,7 +2,7 @@ window.onload=()=>{
     let buttonCal= document.querySelector('#calculate')
     buttonCal.addEventListener('click',CalculateBMI)
 
-}
+};
 function CalculateBMI(){
     let age = parseInt(document.querySelector('#age').value)
     let height = parseInt(document.querySelector("#height").value);
