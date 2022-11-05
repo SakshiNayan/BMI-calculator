@@ -4,14 +4,14 @@ window.onload=()=>{
 
 }
 function CalculateBMI(){
-    let age = parseInt(document.getElementById('age').value)
-    let height = parseInt(document.getElementById("height").value);
-    let weight = parseInt(document.getElementById("weight").value);
-    let result = document.getElementById("result")
+    let age = parseInt(document.querySelector('#age').value)
+    let height = parseInt(document.querySelector("#height").value);
+    let weight = parseInt(document.querySelector("#weight").value);
+    let result = document.querySelector("#result")
     var male = document.getElementById("male");
     var female = document.getElementById("female");
 
-    if(age ==="" || age>2 && age<120){
+    if(age >120 && age < 2){
         result.innerHTML='Please provide age between 2-120'
     }
     else if(height ==="" || isNaN(height)){
@@ -19,6 +19,9 @@ function CalculateBMI(){
     }
     else if(weight ==="" || isNaN(weight)){
         result.innerHTML='provide valid weight!'
+    }
+    else if(age === "" || (male.checked == false && female.checked == false)){
+        alert("All fields are required!");
     }
     else{
         let bmi =(weight / ((height* height)/1000)).toFixed(2);
